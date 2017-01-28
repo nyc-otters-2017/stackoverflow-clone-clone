@@ -1,4 +1,9 @@
 class AnswersController < ApplicationController
+  def show
+    @answer = Answer.find(params[:id])
+    render json: @answer if request.xhr?
+  end
+
   def index
     @answers = Answer.all
     render json: @answers if request.xhr?

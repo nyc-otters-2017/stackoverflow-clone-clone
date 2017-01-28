@@ -17,18 +17,11 @@ class AnswerIndex extends React.Component {
     return(
       <div>
         <h2>Answers</h2>
-        <p>
           {
             this.state.answers.map((answer, i) => {
-              return (
-                <dt>
-                <dd><strong>Answer:</strong> {answer.body}</dd><br/>
-                </dt>
-              )
-
+              return <p><a href={`/questions/1/answers/${answer.id}`}>{answer.body}</a></p>
             })
           }
-        </p>
       </div>
 
     )
