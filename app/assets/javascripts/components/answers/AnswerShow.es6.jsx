@@ -6,21 +6,21 @@ class AnswerShow extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: '/questions/1/answers/1'
+      url: "/questions/1/answers/2"
     }).done((response) => {
       console.log(response)
-      this.setState( response )
-    })
+      this.setState(response)
+    }.bind(this))
   }
 
   render() {
-    debugger
-    let {body, created_at} = this.props.singleAnswer
+    let {body, created_at} = this.state
     return(
       <div>
-        <h1>hi</h1>
+        <h1>Answer Data</h1>
         <p>{body}</p>
         <p>{created_at}</p>
+        <p><a href={`/questions/1/answers/`}>Back</a></p>
       </div>
     )
   }
